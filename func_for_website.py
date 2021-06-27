@@ -53,3 +53,5 @@ def predict_conditions(age, gender, told_to_exercise, bmi, water, weight_kg, cou
         model = pickle.load(open(f"{k}.pickle", "rb"))
         if model.predict([[age, gen, t_o_e, bmi, water, weight_kg, in_us]])[0] == 1.:
             retArr.append(conditions.get(k))
+    return retArr
+
